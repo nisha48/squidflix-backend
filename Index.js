@@ -1,20 +1,17 @@
 import express from "express";
-import cors from "cors";
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
     status: "OK",
     service: "SquidFlix Backend",
-    message: "Backend is running successfully"
   });
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`SquidFlix backend running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
